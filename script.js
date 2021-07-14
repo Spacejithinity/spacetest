@@ -14,12 +14,6 @@ var load_counter = 0;
 // Initialize images for layers
 var background = new Image();
 var shadows = new Image();
-var clouds = new Image();
-var floaties_1 = new Image();
-var floaties_2 = new Image();
-var mask = new Image();
-var humans = new Image();
-var floaties_3 = new Image();
 
 // Create a list of layer objects
 // Each object contains the following:
@@ -32,68 +26,22 @@ var floaties_3 = new Image();
 var layer_list = [
 	{
 		'image': background,
-		'src': 'img/20210713101812.png',
+		'src': 'https://drive.google.com/uc?id=1sOVoMn6loqV1t_0GrQ_HBT3RRmBld9tZ',
 		'z_index': -2.25,
 		'position': {x: 0, y: 0},
 		'blend': null,
 		'opacity': 1
 	},
-	{
-		'image': clouds,
-		'src': 'img/20210713101805.png',
-		'z_index': -2,
-		'position': {x: 0, y: 0},
-		'blend': null,
-		'opacity': 1
-	},
-	{
-		'image': floaties_1,
-		'src': 'img/20210713101825.png',
-		'z_index': -1.25,
-		'position': {x: 0, y: 0},
-		'blend': 'overlay',
-		'opacity': 1
-	},
-	{
-		'image': floaties_2,
-		'src': 'img/20210713101702.png',
-		'z_index': -0.5,
-		'position': {x: 0, y: 0},
-		'blend': 'overlay',
-		'opacity': 1
-	},
+	
 	{
 		'image': shadows,
-		'src': 'img/20210713101818.png',
+		'src': 'https://drive.google.com/uc?id=1Lb1E_crRJMFzd2lGiMFJssVk1vFgh_pU',
 		'z_index': -1.25,
 		'position': {x: 0, y: 0},
 		'blend': 'multiply',
 		'opacity': 0.75
-	},
-	{
-		'image': mask,
-		'src': 'img/20210713101654.png',
-		'z_index': 0,
-		'position': {x: 0, y: 0},
-		'blend': null,
-		'opacity': 1
-	},
-	{
-		'image': humans,
-		'src': 'img/20210713101646.png',
-		'z_index': 0.8,
-		'position': {x: 0, y: 0},
-		'blend': null,
-		'opacity': 1
-	},
-	{
-		'image': floaties_3,
-		'src': 'img/20210713101636.png',
-		'z_index': 2,
-		'position': {x: 0, y: 0},
-		'blend': null,
-		'opacity': 0.9
 	}
+	
 ];
 
 
@@ -127,7 +75,7 @@ function drawCanvas() {
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	
 	// This is needed for the animation to snap back to center when you release mouse or touch
-
+	
 	
 	// Calculate how much the canvas should be rotated
 	var rotate_x = (pointer.y * -0.15) + (motion.y * -1.2);
@@ -284,10 +232,7 @@ function endGesture() {
 	// You aren't touching or clicking anymore, so set this back to false
 	moving = false;
 	
-	// This removes any in progress tweens
-	
-	// This starts the animation to reset the position of all layers when you stop moving them
-	var pointer_tween = new TWEEN.Tween(pointer).to({x: 0, y: 0}, 300).easing(TWEEN.Easing.Back.Out).start();	
+		
 }
 
 
